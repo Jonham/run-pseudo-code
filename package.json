@@ -1,0 +1,13 @@
+{
+  "name": "run-pseudo-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch '*' -e js,mjs --exec node --experimental-modules index.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "js-beautify": "^1.10.2",
+    "nodemon": "^1.19.2"
+  }
+}
