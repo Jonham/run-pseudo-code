@@ -3,7 +3,7 @@
  * @export
  * @returns {string}
  */
-export function getPseudoCode() {
+function getPseudoCode() {
 // Pseudocode.js on http://www.tatetian.io/pseudocode.js/
   // const pseudoCode = document.querySelector('.ps-block').innerText
   const pseudoCode = `1:procedure Quicksort(a,p,r)
@@ -49,6 +49,14 @@ export function getPseudoCode() {
  * @export
  * @returns {string[]}
  */
-export function GetRawPCode() {
+function GetRawPCode() {
   return getPseudoCode().split('\n').filter(Boolean).map(i => i.split(':')[1])
 }
+
+function ParseRawText(rawText = '') {
+  return rawText.split('\n').filter(Boolean).map(i => i.split(':')[1])
+}
+
+exports.getPseudoCode = getPseudoCode
+exports.GetRawPCode = GetRawPCode
+exports.ParseRawText = ParseRawText

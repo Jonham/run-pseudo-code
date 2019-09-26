@@ -1,9 +1,8 @@
-import jsBeautify from 'js-beautify'
-const BeautifyJS = jsBeautify.js
+const BeautifyJS = require('js-beautify').js
 
-import { GetRawPCode } from './pseudoCode.mjs'
-import { TranslatePCode } from './translate.mjs'
-import { RunJS } from './runCode.mjs'
+const { GetRawPCode } = require('./src/pseudoCode.js')
+const { TranslatePCode } = require('./src/translate.js')
+const { RunJS } = require('./src/runCode.js')
 
 const rawCodeLines = GetRawPCode()
 const codes = TranslatePCode(rawCodeLines).join('\n')

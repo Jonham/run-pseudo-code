@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch '*' -e js,mjs --exec node --experimental-modules index.mjs"
+    "dev": "nodemon --watch '*' -e js,mjs --exec node index.js",
+    "build": "webpack"
   },
   "license": "MIT",
   "dependencies": {
     "js-beautify": "^1.10.2",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "webpack": "^4.41.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.9"
   }
 }

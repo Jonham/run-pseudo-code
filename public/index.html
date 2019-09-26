@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Run PseudoCode</title>
+  <style>
+    pre {
+      background-color: #eee;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>raw (PseudoCode)</h3>
+  <img src="./Quicksort PseudoCode.png" alt="">
+  <pre class="raw"></pre>
+
+  <hr>
+
+  <h3>result</h3>
+  <pre class="result"></pre>
+
+  <script src="./RunPseudoCode.bundle.js"></script>
+  <script>
+    function $(selector){ return document.querySelector(selector) }
+    var rawText = `1:procedure Quicksort(a,p,r)
+
+2:if p<r then
+
+3:q= Partition(a,p,r)
+
+4:Quicksort(a,p,q−1)
+
+5:Quicksort(a,q+1,r)
+
+6:end if
+
+7:end procedure
+
+8:procedure Partition(a,p,r)
+
+9:x=a[r]
+
+10:i=p−1
+
+11:for j=p to r−1 do
+
+12:if a[j]<x then
+
+13:i=i+1
+
+14:exchange a[i] with a[j]
+
+15:end if
+
+16:exchange a[i] with a[r]
+
+17:end for
+
+18:end procedure`
+
+    var rawBox = $('.raw')
+    rawBox.innerText = rawText
+
+    var resultBox = $('.result')
+    resultBox.innerText = ParsePseudoCode(rawText, 'beautify')
+  </script>
+</body>
+</html>

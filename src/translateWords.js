@@ -1,4 +1,4 @@
-import { GETuniqueVarName } from './getUniqueVarName.mjs'
+const { GETuniqueVarName } = require('./getUniqueVarName.js')
 /**
  * @typedef {object} KeywordTranslatePair
  * @property {RegExp} from
@@ -6,7 +6,7 @@ import { GETuniqueVarName } from './getUniqueVarName.mjs'
  */
 
 /** @type {KeywordTranslatePair[]} 代码替换规则 */
-export const TranslateWordsMap = [
+const TranslateWordsMap = [
   { // 异常的 -
     from: /\−/gm,
     to: '-',
@@ -67,3 +67,5 @@ export const TranslateWordsMap = [
     }
   },
 ]
+
+exports.TranslateWordsMap = TranslateWordsMap

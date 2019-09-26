@@ -1,4 +1,4 @@
-export function findVar(codeRows = []) {
+function findVar(codeRows = []) {
   return codeRows.map((row) => {
     let vars = []
 
@@ -18,6 +18,8 @@ export function findVar(codeRows = []) {
     return vars
   })
 }
+exports.findVar = findVar
+
 // const vars = findVar(codes.split('\n'))
 // add let/const
 // addLetConst(codes.split('\n'), vars)

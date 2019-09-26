@@ -1,4 +1,4 @@
-export function RunJS(fnStr, fnName = false, params = []) {
+function RunJS(fnStr, fnName = false, params = []) {
   if (fnName === false) {
     const m = fnStr.match(/function (.+)\(/)
     if (m) fnName = m[1]
@@ -11,12 +11,13 @@ export function RunJS(fnStr, fnName = false, params = []) {
     var resultKey = 'ResultKey'
 
     eval(fnStr +
-      `result[${resultKey}] = ${fnName}(...params)`)
+      `result['${resultKey}'] = ${fnName}(...params)`)
     return result[resultKey] || 'Error: { "msg": "your function may have no return" }'
   } catch (err) {
     console.log(err)
   }
 }
+exports.RunJS = RunJS
 
 // function run(codes) {
 //   var result = 'preset'

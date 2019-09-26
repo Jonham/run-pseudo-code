@@ -1,4 +1,4 @@
-import { getPseudoCode } from './pseudoCode.mjs'
+const { getPseudoCode } = require('./pseudoCode.js')
 
 const pseudoCode = getPseudoCode()
 let varCount = 0
@@ -10,6 +10,7 @@ if (pseudoCode.match(new RegExp(varPrefix), 'gm')) varPrefix + Date.now()
  * @export
  * @returns {string}
  */
-export function GETuniqueVarName() {
+function GETuniqueVarName() {
   return varPrefix + varCount++
 }
+exports.GETuniqueVarName = GETuniqueVarName
